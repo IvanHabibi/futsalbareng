@@ -7,22 +7,35 @@
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+<script>
+  function waitt(value) {
+    var nama = document.getElementById("nama_group").value;
+    nama = nama.replace(/ /g, '+');
+    var e = document.getElementById("position");
+    var position = e.options[e.selectedIndex].value;
+    window.location = "/home/wait?id=" + value + "&nama=" + nama + "&position=" + position;
+  }
+
+  function search(value) {
+    window.location = "/home/search?id=" + value + "&position=" + position;
+  }
+</script>
 
 <body>
   <h1><%= title %></h1>
   <h3>Your Position</h3>
-  <select name="user">
+  <select id="position">
 <option value="" disabled selected></option>
 <% list_position.forEach(position=>{ %>
-<option value=<%- position.id %>  ><%- position.pos_name %></option>
+<option value=<%- position.pos_name %>  ><%- position.pos_name %></option>
 <% }); %>
 </select>
   <ul>
     <li>
-      <a href="/room/wait?id=<%-id %>">Create Room</a>
+      <input type="text" id="nama_group"></input> <a href="javascript:waitt(<%- id %>)">Create Room</a>
     </li>
     <li>
-      <a href="/room/search?id=<%-id %>">Search Room</a>
+      <a href="javascript:search(<%- id %>)">Search Room</a>
     </li>
   </ul>
 </body>
