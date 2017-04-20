@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <h3>Your Position</h3>
+  <select name="user">
+<option value="" disabled selected></option>
+<% list_position.forEach(position=>{ %>
+<option value=<%- position.id %>  ><%- position.pos_name %></option>
+<% }); %>
+</select>
+  <ul>
+    <li>
+      <a href="/room/wait?id=<%-id %>">Create Room</a>
+    </li>
+    <li>
+      <a href="/room/search?id=<%-id %>">Search Room</a>
+    </li>
+  </ul>
+</body>
+
+</html>
