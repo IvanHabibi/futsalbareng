@@ -17,6 +17,8 @@
   }
 
   function search(value) {
+    var e = document.getElementById("position");
+    var position = e.options[e.selectedIndex].value;
     window.location = "/home/search?id=" + value + "&position=" + position;
   }
 </script>
@@ -27,7 +29,8 @@
   <select id="position">
 <option value="" disabled selected></option>
 <% list_position.forEach(position=>{ %>
-<option value=<%- position.pos_name %>  ><%- position.pos_name %></option>
+  <%var name= position.pos_name %>
+<option value=<%-name %>  ><%- name %></option>
 <% }); %>
 </select>
   <ul>
