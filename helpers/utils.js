@@ -21,9 +21,4 @@ util.isUser = function(input) {
 }
 
 
-
-
-
-
-
 module.exports = util;

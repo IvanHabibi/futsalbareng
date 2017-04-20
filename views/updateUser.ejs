@@ -4,12 +4,12 @@
 <head>
     <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 </head>
 
 <body>
     <h1></h1>
-    <p>Welcome to </p>
-    <h2>Create your data</h2>
+    <h2>Update Data User</h2>
     <form class="" action="/Users/update" method="post">
         <label>Username</label>
         <input type="text" name="username" value="<%=user.username%>"> <br>
@@ -17,14 +17,13 @@
         <input type="text" name="phone" value="<%= user.phone%>"><br>
         <label>email</label>
         <input type="text" name="email" value="<%=user.email%>"><br>
-        <label>position: </label><br>
-        <input type="checkbox" name="position" value=1>
-        <label>keeper</label><br>
-        <input type="checkbox" name="position" value=2>
-        <label>back</label><br>
-        <input type="checkbox" name="position" value=3>
-        <label>striker</label><br>
-        <button type="submit" name="button" value"<%=user.id%>">submit</button>
+
+        <input type="checkbox" name="position" id="checkboxid" value=1><label for="checkboxid">Keeper</label><br>
+        <input type="checkbox" name="position" id="checkboxid2" value=2><label for="checkboxid2">Back</label><br>
+        <input type="checkbox" name="position" id="checkboxid3" value=3><label for="checkboxid3">Striker</label><br>
+
+
+        <button type="submit" name="button" value="<%=user.id%>">submit</button>
     </form>
 </body>
 
