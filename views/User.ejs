@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <title></title> -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <!-- <h1></h1> -->
+    <h2>crud</h2>
+    <table>
+      <thead>
+
+          <tr>
+            <th>no.</th>
+            <th>Username</th>
+            <th>phone</th>
+            <th>email</th>
+          </tr>
+
+
+      </thead>
+      <tbody>
+        <%
+        let no=0;
+        users.forEach(user=>{%>
+          <tr>
+            <td><%= no%></td>
+            <td><%= user.username%></td>
+            <td><%= user.phone%></td>
+            <td><%= user.email%></td>
+            <td><a href="Users/delete/<%=user.id%>">delete</a></td>
+            <td><a href="Users/update/<%=user.id%>">update</a></td>
+          </tr>
+        <%no++})%>
+      </tbody>
+    </table>
+    <a href="/Users/create">Create New Username</a>
+  </body>
+</html>
