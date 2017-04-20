@@ -5,7 +5,6 @@ var db = require('../models');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var input = req.
   res.render('index', {
     title: 'Express'
   });
