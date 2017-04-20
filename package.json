@@ -16,5 +16,18 @@
     "sequelize": "^3.30.4",
     "sequelize-cli": "^2.7.0",
     "serve-favicon": "~2.4.2"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearzen3/futsalbareng.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fearzen3/futsalbareng/issues"
+  },
+  "homepage": "https://github.com/fearzen3/futsalbareng#readme",
+  "description": ""
 }

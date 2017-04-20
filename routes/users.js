@@ -28,15 +28,47 @@ router.get('/update/:id',(req,res,next)=>{
   .then(user=>{
     user.getPositions()
     .then(positions=>{
-      console.log(user.username)
       for (var i = 0; i < positions.length; i++) {
         console.log(positions[i].pos_name)
       }
+      res.render('updateUser',{
+        user:user,
+        positions:positions
+      })
+      // console.log(user.username)
+
     })
   })
 })
 
+
+
 router.post('/create',(req,res,next)=>{
+  username = req.body.username
+  phone = req.body.phone
+  email = req.body.email
+  position = req.body.position
+  db.User.create({
+    username : username,
+    phone : phone,
+    status : 'idle',
+    email :email
+  }).then(data=>{
+    let id = data.get('id');
+    for (var i = 0; i < position.length; i++) {
+      db.User_Position.create({
+        id_position:position[i],
+        id_user:id
+      }).then(data=>{
+        res.redirect('/admin?username=admin')
+      })
+    }
+  }).catch(err=>{
+    console.log(err.message);
+  })
+})
+
+router.post('/create2',(req,res,next)=>{
   username = req.body.username
   phone = req.body.phone
   email = req.body.email
@@ -52,15 +84,14 @@ router.post('/create',(req,res,next)=>{
       db.User_Position.create({
         id_position:position[i],
         id_user:id
-      }).then(data=>{
-        res.redirect('/admin')
+      }).then(data2=>{
+        console.log(data2);
+        res.redirect('/home?id='+data.id)
       })
     }
-
   }).catch(err=>{
     console.log(err.message);
   })
-
 })
 
 module.exports = router;

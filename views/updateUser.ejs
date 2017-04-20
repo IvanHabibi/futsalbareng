@@ -9,14 +9,14 @@
 <body>
     <h1></h1>
     <p>Welcome to </p>
-    <h2>CREATE USER</h2>
-    <form class="" action="/Users/create" method="post">
+    <h2>Create your data</h2>
+    <form class="" action="/Users/update" method="post">
         <label>Username</label>
-        <input type="text" name="username" value=""> <br>
+        <input type="text" name="username" value="<%=user.username%>"> <br>
         <label>phone</label>
-        <input type="text" name="phone" value=""><br>
+        <input type="text" name="phone" value="<%= user.phone%>"><br>
         <label>email</label>
-        <input type="text" name="email" value=""><br>
+        <input type="text" name="email" value="<%=user.email%>"><br>
         <label>position: </label><br>
         <input type="checkbox" name="position" value=1>
         <label>keeper</label><br>
@@ -24,7 +24,7 @@
         <label>back</label><br>
         <input type="checkbox" name="position" value=3>
         <label>striker</label><br>
-        <button type="submit" name="button">submit</button>
+        <button type="submit" name="button" value"<%=user.id%>">submit</button>
     </form>
 </body>
 
