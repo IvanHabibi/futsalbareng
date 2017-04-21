@@ -36,13 +36,23 @@ router.get('/', function(req, res, next) {
             .then(result => {
               var position = result.token;
               position = position.split(",");
-              res.render('group', {
-                title: 'Group',
-                list_user: ArrUser,
-                id: result.id,
-                nama: result.group_name,
-                list_position: position
-              })
+              if (ArrUser.length == 5) {
+                res.render('result', {
+                  title: 'Your Team',
+                  list_user: ArrUser,
+                  id: result.id,
+                  nama: result.group_name,
+                  list_position: position
+                })
+              } else {
+                res.render('group', {
+                  title: 'Group',
+                  list_user: ArrUser,
+                  id: result.id,
+                  nama: result.group_name,
+                  list_position: position
+                })
+              }
             })
         })
     })
