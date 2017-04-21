@@ -4,11 +4,11 @@
 <head>
     <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 </head>
 
 <body>
     <h1></h1>
-    <p>Welcome to </p>
     <h2>Create your data</h2>
     <form class="" action="/Users/create2" method="post">
         <label>Username</label>
@@ -18,12 +18,9 @@
         <label>email</label>
         <input type="text" name="email" value=""><br>
         <label>position: </label><br>
-        <input type="checkbox" name="position" value=1>
-        <label>keeper</label><br>
-        <input type="checkbox" name="position" value=2>
-        <label>back</label><br>
-        <input type="checkbox" name="position" value=3>
-        <label>striker</label><br>
+        <input type="checkbox" name="position" id="checkboxid" value=1><label for="checkboxid">Keeper</label><br>
+        <input type="checkbox" name="position" id="checkboxid2" value=2><label for="checkboxid2">Back</label><br>
+        <input type="checkbox" name="position" id="checkboxid3" value=3><label for="checkboxid3">Striker</label><br>
         <button type="submit" name="button">submit</button>
     </form>
 </body>

@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "wisnu",
-    "password": "wisnu",
+    "username": "ivan",
+    "password": "Mavericks.23",
     "database": "pairproject",
     "host": "127.0.0.1",
     "port":5432,

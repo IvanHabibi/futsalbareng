@@ -6,6 +6,7 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 </head>
 <script>
   function waitt(value) {
@@ -24,9 +25,12 @@
 </script>
 
 <body>
+  <div class="right">
+  <a class="waves-effect waves-light btn-small" href="/">Log Out</a>
+  </div>
   <h1><%= title %></h1>
-  <h3>Your Position</h3>
-  <select id="position">
+  <label for="">Pick your position</label>
+  <select class="browser-default" id="position">
 <option value="" disabled selected></option>
 <% list_position.forEach(position=>{ %>
   <%var name= position.pos_name %>
@@ -35,12 +39,14 @@
 </select>
   <ul>
     <li>
+      <label for="">Group Name</label>
       <input type="text" id="nama_group"></input> <a href="javascript:waitt(<%- id %>)">Create Room</a>
     </li>
     <li>
       <a href="javascript:search(<%- id %>)">Search Room</a>
     </li>
   </ul>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
 
 </html>
