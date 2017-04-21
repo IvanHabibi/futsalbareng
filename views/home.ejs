@@ -26,7 +26,7 @@
 
 <body>
   <div class="right">
-  <a class="waves-effect waves-light btn-small" href="/">Log Out</a>
+    <a class="waves-effect waves-light btn-small" href="/">Log Out</a>
   </div>
   <h1><%= title %></h1>
   <label for="">Pick your position</label>
@@ -40,10 +40,11 @@
   <ul>
     <li>
       <label for="">Group Name</label>
-      <input type="text" id="nama_group"></input> <a href="javascript:waitt(<%- id %>)">Create Room</a>
+      <input type="text" id="nama_group"></input> <a class="waves-effect waves-light btn" href="javascript:waitt(<%- id %>)">Create Room</a>
     </li>
+    <br>
     <li>
-      <a href="javascript:search(<%- id %>)">Search Room</a>
+      <a class="waves-effect waves-light btn" href="javascript:search(<%- id %>)">Search Group</a>
     </li>
   </ul>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
